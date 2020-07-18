@@ -1,0 +1,52 @@
+<div class="card">
+    <form #addProducts="ngForm"(ngSubmit)="addProduct()">
+        <div class="card-header">
+            {{title}}
+        </div>
+        <div class="cardbody">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><label>Product Id</label></td>
+                            <td><input type="text" name="p_id" [ngModel]="productItem.productId" #productId="ngModel" [class.is-invalid]="productId.invalid && productId.touched"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Name</label></td>
+                            <td><input type="text" name="p_name" [ngModel]="productItem.productName" #productName="ngModel" [class.is-invalid]="productName.invalid && productName.touched" minlength="6" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Code</label></td>
+                            <td><input type="text" name="p_code" [ngModel]="productItem.productCode" #productCode="ngModel" [class.is-invalid]="productCode.invalid && productCode.touched" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Release Date</label></td>
+                            <td><input type="text" name="p_date" [ngModel]="productItem.releaseDate" #releaseDate="ngModel" [class.is-invalid]="releaseDate.invalid" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Description</label></td>
+                            <td><input type="text" name="p_desc" [ngModel]="productItem.description" #description="ngModel" [class.is-invalid]="description.invalid" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Price</label></td>
+                            <td><input type="text" name="p_price" [ngModel]="productItem.price" #price="ngModel" [class.is-invalid]="price.invalid" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Rating</label></td>
+                            <td><input type="text" name="p_rating" [ngModel]="productItem.starRating" #starRating="ngModel" [class.is-invalid]="starRating.invalid" required/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><label>Product Image</label></td>
+                            <td><input type="file" name="p_img" [ngModel]="productItem.imageUrl" #imageUrl="ngModel" [class.is-invalid]="imageUrl.invalid" required/></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input [disabled]="addProducts.form.invalid"type="submit" value="submit"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
